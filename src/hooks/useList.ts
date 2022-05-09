@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from "react"
 import { Hero, Position } from "../types"
 
-const heroUrl = 'http://game.gtimg.cn/images/lol/act/img/js/heroList/hero_list.js'
-const positionUrl = 'https://lol.qq.com/act/lbp/common/guides/guideschampion_position.js'
+const heroUrl = '//game.gtimg.cn/images/lol/act/img/js/heroList/hero_list.js'
+const positionUrl = '//lol.qq.com/act/lbp/common/guides/guideschampion_position.js'
 
 // 查询英雄列表
 function fetchHero() {
