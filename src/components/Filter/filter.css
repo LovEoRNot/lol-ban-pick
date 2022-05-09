@@ -1,0 +1,87 @@
+.filter {
+    display: flex;
+    justify-content: space-between;
+    width: var(--content-width);
+    margin: 0 auto;
+    padding: 7px 0;
+    border-bottom: 2px solid #504224;
+}
+
+.filter-position {
+    width: 225px;
+    display: flex;
+    align-items: center;
+}
+
+.position-icon {
+    background: url(https://game.gtimg.cn/images/lol/lolstrategy/spr_info_overview.png?2022_1_19_17_20_44) no-repeat;
+    width: 25px;
+    height: 25px;
+    filter: opacity(0.5);
+    transition: filter .3s;
+    cursor: pointer;
+}
+
+.position-icon:not(:last-of-type) {
+    margin-right: 25px;
+}
+
+.position-icon.active {
+    transform: scale(1.05);
+    filter: opacity(1);
+}
+
+.position-top {
+    background-position: -24px 2px;
+}
+.position-jungle {
+    background-position: -49px 2px;
+}
+.position-mid {
+    background-position: -24px -21px;
+}
+.position-bottom {
+    background-position: 2px -21px;
+}
+.position-support {
+    background-position: 1px 4px;
+}
+
+.custom-input {
+    position: relative;
+}
+
+.custom-input .search-icon{
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url(https://game.gtimg.cn/images/lol/lolstrategy/spr_info_overview.png?2022_1_19_17_20_44) no-repeat;
+    background-position: 1px -46px;
+    filter: opacity(0.6); 
+}
+
+.custom-input input {
+    width: 242px;
+    padding: 6px 8px 6px 31px;
+    border: 1px solid #3A301B;
+    outline: none;
+    font-size: 14px;
+    background: #000;
+    color: #9B9687;
+
+    transition: all .3s;
+
+}
+
+.custom-input:hover input,
+.custom-input input:focus {
+    border-color: #C5A462;
+}
+
+.custom-input:hover .search-icon,
+.custom-input input:focus + .search-icon {
+    filter: opacity(1);
+}

@@ -1,0 +1,115 @@
+.champion-content {
+    position: relative;
+    height: 580px;
+    margin-bottom: 14px;
+}
+
+.champion-list-wrapper {
+    height: 100%;
+    overflow: hidden;
+}
+
+.champion-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 38px;
+    transition: margin .1s;
+}
+
+.champion {
+    margin-top: 14px;
+    cursor: pointer;
+}
+
+.champion-avatar {
+    position: relative;
+    display: inline-block;
+    width: 88px;
+    height: 88px;
+    border: 1px solid #35363C;
+    overflow: hidden;
+}
+
+.champion:hover .border {
+    display: block;
+}
+
+/* 悬浮边框 */
+.border {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #C8AA6E;
+}
+
+.border .clip {
+    position: absolute;
+    left: -7px;
+    top: -7px;
+    width: 100px;
+    height: 100px;
+    background: #000;
+    transform: rotateZ(45deg);
+    transform-origin: center;
+}
+
+/* 选中后的圆形边框 */
+.round {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #C8AA6E;
+}
+
+.img-wrapper {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 82px;
+    height: 82px;
+    overflow: hidden;
+}
+
+.champion-avatar.checked img{
+    filter: grayscale(1);
+}
+
+.champion-avatar.checked .round,
+.champion-avatar.checked .border {
+    display: block;
+}
+
+.champion-avatar img {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.2);
+}
+
+.champion-title {
+    color: #A09B8C;
+    text-align: center;
+    margin: 8px auto 0;
+    font-size: 14px
+}
+
+/* 侧边滚动条 */
+.scroll-bar {
+    position: absolute;
+    top: 0;
+    right: -27px;
+    width: 6px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.scroll-thumb {
+    background: #785A28;
+    width: 100%;
+    border-radius: 3px;
+    transition: margin .1s;
+}

@@ -1,0 +1,10 @@
+.header {
+    margin-top: 10px;
+}
+
+.title,
+.count-down {
+    font-weight: 600;
+    font-size: 32px;
+    color: #F0E6D2;
+}
