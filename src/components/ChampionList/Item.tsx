@@ -1,23 +1,25 @@
-import { Hero } from '../../types';
+import { ChampionGrid } from '../../types';
 import './index.css'
 
 interface Props {
-  hero: Hero;
+  champion: ChampionGrid| undefined;
   onSelect: Function;
   isChecked: Boolean;
+  visible: Boolean;
 }
 
-function Item({ hero, onSelect, isChecked }: Props) {
-  const { title: name, avatar } = hero;
-  const style: Record<string, string> = {}
+function Item({ champion, onSelect, isChecked, visible }: Props) {
+  const { top, left, hero } = champion || {};
+  const { title: name = '', avatar } = hero || {};
+  const nameStyle: Record<string, string> = {}
 
   if (name.length > 6) {
     const num = name.length - 6;
-    style.width = `${100 + num * 17}%`
-    style.marginLeft = `-${num * 17 / 2}%`
+    nameStyle.width = `${100 + num * 17}%`
+    nameStyle.marginLeft = `-${num * 17 / 2}%`
   }
 
-  return <div className='champion' onClick={() => onSelect(hero)}>
+  return <div className='champion' style={{ left, top, display: visible ? 'block' : 'none' }} onClick={() => onSelect(hero)}>
     <div className={`champion-avatar${isChecked ? ' checked' : ''}`}>
       <div className="border">
         <div className="clip"></div>
@@ -28,7 +30,7 @@ function Item({ hero, onSelect, isChecked }: Props) {
       <div className="round"></div>
     </div>
 
-    <p className="champion-title" style={style}>
+    <p className="champion-title" style={nameStyle}>
       {name}
     </p>
   </div>

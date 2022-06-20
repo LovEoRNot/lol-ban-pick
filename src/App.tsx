@@ -12,7 +12,7 @@ import usePlayer from './hooks/usePlayer';
 import useCountDown from './hooks/useCountDown';
 
 function App() {
-  const { heros, filterHero } = useList();
+  const { heros, allHeros, filterHero } = useList();
   const [checkHero, setCheckHero] = useState<Hero | null>(null)
   const [filter, setFilter] = useState<IFilter>({ position: '', keyword: '' })
   const time = useCountDown(1200)
@@ -61,7 +61,7 @@ function App() {
       <Filter onFilterChange={handleFilterChange} filter={filter}></Filter>
       <div className="content">
         <Queue players={players} time={time}></Queue>
-        <ChampionList heros={heros} currentHero={checkHero} onHeroChange={handleHeroChange}></ChampionList>
+        <ChampionList allHeros={allHeros} heros={heros} currentHero={checkHero} onHeroChange={handleHeroChange}></ChampionList>
         <Queue players={enemies} position="right"></Queue>
       </div>
       <Footer></Footer>

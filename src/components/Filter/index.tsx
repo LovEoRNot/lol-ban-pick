@@ -27,9 +27,9 @@ export default function Filter({ onFilterChange, filter = { position: '', keywor
     }
 
     const searchKeyword = debounce((value: string) => {
-            console.log('value is : ', value)
-            onFilterChange({ ...filter, keyword: value })
-        }, 300)
+        console.log('value is : ', value)
+        onFilterChange({ ...filter, keyword: value })
+    }, 300);
 
     const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
         const { target: { value } } = e;
