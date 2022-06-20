@@ -24,3 +24,17 @@ export type Player = {
     isCurrent?: Boolean,
     hero?: Hero;
 }
+
+export type ChampionGrid = {
+    left: number;
+    top: number;
+    hero: Hero;
+}
+
+export type ChampionStyle = {
+    width: number;
+    height: number;
+    marginTop: number;
+    marginRight: number;
+    column: number;
+}

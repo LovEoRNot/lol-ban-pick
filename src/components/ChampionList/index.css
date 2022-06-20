@@ -10,15 +10,18 @@
 }
 
 .champion-list {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-column-gap: 38px;
+    grid-column-gap: 38px; */
+    position: relative;
     transition: margin .1s;
 }
 
 .champion {
+    position: absolute;
     margin-top: 14px;
     cursor: pointer;
+    transition: all .3s;
 }
 
 .champion-avatar {
